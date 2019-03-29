@@ -18,19 +18,24 @@
 	<a href="index.php">Retour à l'accueil</a>
 	<h1 class="text-center textevert">Les événements :</h1>
 
-	<div class="container">
+	<div class="container mt-4">
+
+    <div class="row ">
 
 	<?php foreach($article as $article): ?>
-		<div class=" carte col-md-3">
-			<img src="fridays.jpg" class="imageaccueil">
-			<h6><?= $article->LibTitrA ?></h6>
+		<div class="col-lg-4">
+      <h5 class="text-center"><?= $article->LibTitrA ?></h5>
+			<img src="<?= $article->UrlPhotA ?>" width ="350px" height="300px">
+      <time><?= $article->DtCreA ?></time>
 			<p><?= $article->LibChapoA ?></p>
-			<time><?= $article->DtCreA ?></time>
-			<a href="article.php?NumArt=<?= $article->NumArt ?>">Lire</a>
+			<center><a href="article.php?NumArt=<?= $article->NumArt ?>">Lire</a></center>
 		</div>
 		<?php endforeach; ?>
 
 	</div>
+</div>
+
+
 	<footer class="page-footer">
 
         <div style="background-color: #62997A;">

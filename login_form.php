@@ -2,16 +2,39 @@
     <html lang="fr">
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <title>(SUR)VIE ETUDIANTE</title>
+            <title>Connexion</title>
                 <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="stylesglobal.css">
+        <link rel="shortcut icon" href="img/icone.ico">
         </head>
         <body>
-        <h1>
-            Se connecter
-        </h1>
+
+        <?php
+        if (isset($_SESSION['Connected']) && !empty($_SESSION['Connected'])) {
+            $Connected = $_SESSION['Connected'];
+        }
+        else {
+            $Connected = false;
+        }
+?>
+        
+    <div class="col-lg-12">
+        <center><h1 class="policemoche">Connexion</h1>
+    </div>
+
+    <div class="wrapper fadeInDown">
+    <div id="formContent">
+        <form>
+            <div class="login">
+                <input type="text"  class="fadeIn second"  placeholder="Identifiant">
+                <input type="text"  class="fadeIn third"  placeholder="Mot de passe">
+                <input type="submit" class="fadeIn fourth" value="Se connecter">
+            </div>
+        </form>
+    </div>
+    </div>
 
         <footer class="page-footer">
 
@@ -51,18 +74,3 @@
       </footer>
     </body>
 </html>
-<?php
-    require ('connect.php');
-        if (isset($_SESSION['Connected']) && !empty($_SESSION['Connected'])) {
-            $Connected = $_SESSION['Connected'];
-        }
-        else {
-            $Connected = false;
-        }
-?>
-        <form action="admin.php" method="post">
-        Pseudo : <input type="text" name="login" placeholder=" Votre pseudo" required>
-        <br />
-        Mot de Passe : <input type="password" name="pass" placeholder=" Votre mot de passe" required><br />
-        <input type="submit" value="Connexion">
-        </form>

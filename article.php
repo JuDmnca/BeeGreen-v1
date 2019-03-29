@@ -16,6 +16,7 @@
 		<title><?= $article->LibTitrA ?></title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
   <link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 
@@ -115,10 +116,27 @@
         </p>
         <p><time><em><?= $article->DtCreA ?></em></time></p>
 
-        <button type="button" class="btn btn-light">
+        <div class="row">
+        <div class="col-lg-2">
+          <button type="button" class="btn btn-light">
           <a href="#" class="like-counter">J'aime</a>
           <span class="click-text"><a id="clicks"></span>
         </button>
+        </div>
+        
+        <div class="col-lg-2">
+        <form method="POST" action= <?= "edit_article.php?NumArt=".$NumArt ?>  >
+            <input class="btn btn-light"  value="Modifier" name="edit_submit"/>
+        </form>
+        </div>
+
+        <div class="col-lg-2">
+        <form method="POST" action= <?= "delete_article.php?NumArt=".$NumArt ?>  >
+            <input class="btn btn-light" value="Supprimer" name="edit_submit"/>
+        </form>
+        </div>
+
+        </div>
       </div>
 
     </div>
@@ -126,14 +144,7 @@
   </div>
     
 
-  <form action= <?= "edit_article.php?NumArt=".$NumArt ?> method="POST" >
-    <input class="btn-primary modifbutton" type="submit" value="Modifier" name="edit_submit"/>
-  </form>
-
-
-  <form action= <?= "delete_article.php?NumArt=".$NumArt ?> method="POST" >
-    <input class="btn-primary modifbutton" type="submit" value="Supprimer" name="edit_submit"/>
-  </form>
+  
 
 
 

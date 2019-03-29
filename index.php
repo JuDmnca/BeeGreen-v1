@@ -41,7 +41,7 @@
             	<br/>
             	<div class="col-lg-6">
             		<form method="get" action="disconnect.php">
-                		<button type="submit">Déconnexion</button>
+                		<button type="button submit" class="btn btn-light">Déconnexion</button>
            			 </form>
             	</div>
             	</div>
@@ -50,7 +50,7 @@
            		?>
              	<br/>
            			<form method="get" action="login_form.php">
-                		<button type="submit">Connexion</button>
+                		<button type="button submit" class="btn btn-light">Connexion</button>
             		</form>
            		<?php }
            		?>
@@ -67,7 +67,7 @@
 
 				<div class="row">
 		<img src="cercle.png" class='rond'>
-		<a class="nav-link" href="#">Accueil</a>
+		<a class="nav-link" href="index.php">Accueil</a>
 		  		<div class='row caroussel'>
 		  			<?php foreach($motcles as $motcles): ?>
 						<div class=" mr-4">
