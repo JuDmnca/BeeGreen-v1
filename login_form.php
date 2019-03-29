@@ -12,6 +12,7 @@
         <body>
 
         <?php
+    require ('connect.php');
         if (isset($_SESSION['Connected']) && !empty($_SESSION['Connected'])) {
             $Connected = $_SESSION['Connected'];
         }
@@ -21,16 +22,16 @@
 ?>
         
     <div class="col-lg-12">
-        <center><h1 class="policemoche">Connexion</h1>
+        <center><h1 class="policemoche">Se connecter</h1>
     </div>
 
     <div class="wrapper fadeInDown">
     <div id="formContent">
-        <form>
+        <form action="admin.php" method="post">
             <div class="login">
-                <input type="text"  class="fadeIn second"  placeholder="Identifiant">
-                <input type="text"  class="fadeIn third"  placeholder="Mot de passe">
-                <input type="submit" class="fadeIn fourth" value="Se connecter">
+                <input type="text" class="fadeIn second" name="login" placeholder="Identifiant">
+                <input type="text"  class="fadeIn third" name="pass" placeholder="Mot de passe">
+                <input type="submit" class="fadeIn fourth" value="Connexion">
             </div>
         </form>
     </div>
