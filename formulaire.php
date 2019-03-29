@@ -27,9 +27,41 @@
         <link rel="shortcut icon" href="img/icone.ico">
 </head>
 <body>
-    <a href="index.php">Retour à l'accueil</a>
-    <br />
-    <br />
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+            <div class="container"><a class="navbar-brand" href="index.php"><img src="logo.png" width="200px" height="100px"></a>
+              <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only"></span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" href="index.php">Accueil</a>
+                        </li>
+                        
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" href="evenements.php">Événements</a>
+                        </li>
+                        
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" href="acteur.php">Acteurs clés</a>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" href="clindoeil.php">Clin d'oeil</a>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link " href="diy.php">DIY</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <h1 class="text-center textevert">Ajouter un nouvel article</h1>
+
     <?php 
         if($Connected == false){
             echo '<body onLoad="alert(\'Vous devez être connecté en mode éditeur pour faire cela !\')">';
@@ -78,6 +110,27 @@
                 <label for="NumLang" >QUELLE LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
                 <input name="valid" type="submit" value="AJOUTER">
     </form>
+
+        <form name="nouvlang" method="post" action="ajoutlangue.php">
+                <label for="Lib1Lang" >AJOUTER UNE LANGUE</label> : <input type="text" name="Lib1Lang"/></input> <br/>
+                <label for="NumLang" >NUMERO DE LA LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
+                <input name="valid" type="submit" value="AJOUTER">
+    </form>
+
+        <form name="nouvmotcle" method="post" action="ajoutangle.php">
+                <label for="LibAngl" >AJOUTER UN ANGLE</label> : <input type="text" name="LibAngl"/></input> <br/>
+                <label for="NumAngl" >NUMERO DE L'ANGLE</label> : <input type="text" name="NumAngl"/></input> <br/>
+                <label for="NumLang" >QUELLE LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
+                <input name="valid" type="submit" value="AJOUTER">
+    </form>
+
+        <form name="nouvmotcle" method="post" action="ajoutthem.php">
+                <label for="LibThem" >AJOUTER UNE THEMATIQUE</label> : <input type="text" name="LibThem"/></input> <br/>
+                <label for="NumThem" >NUMERO DE LA THEMATIQUE</label> : <input type="text" name="NumThem"/></input> <br/>
+                <label for="NumLang" >QUELLE LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
+                <input name="valid" type="submit" value="AJOUTER">
+    </form>
+
 
 <!--    NumAngl		char(6)	
 	   	NumThem		char(6)

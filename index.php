@@ -66,12 +66,12 @@
 			<nav class=" col-md-11 haut"> <!-- DEBUT NAV-->
 
 				<div class="row">
-		<img src="cercle.png" class='rond'>
+		<img src="cercle.png" class='rond'>	
 		<a class="nav-link" href="index.php">Accueil</a>
 		  		<div class='row caroussel'>
 		  			<?php foreach($motcles as $motcles): ?>
 						<div class=" mr-4">
-		  				<a href="motcle.php?NumMoCle=<?= $motcles->NumMoCle ?>">#<?= $motcles->LibMoCle ?></a>
+		  				<a href="motcle.php?id=<?= $motcles->NumMoCle ?>">#<?= $motcles->LibMoCle ?></a>
 		  				</div>
 		  			<?php endforeach; ?>
 		  			

@@ -189,6 +189,30 @@ function getMC($NumMoCle)
 	$req->closeCursor();
 }
 
+function getLibMoCle($NumMoCle)
+{
+	$server ="mysql:host=localhost;dbname=blogart";
+	$user = "root" ;
+    $password = ""; 
+
+    try {
+        $bdPdo = new PDO($server, $user, $password);
+    }
+
+    catch (PDOException $e) {
+        echo 'Echec de connexion : ' . $e->getMessage();
+    }
+    
+
+	$req = $bdPdo->prepare('SELECT * FROM MOTCLE WHERE NumMoCle = :NumMoCle');
+	$req->execute(array(
+		':NumMoCle' => $NumMoCle));
+	$req->execute();
+	$data = $req->fetchAll(PDO::FETCH_OBJ);
+	return $data;
+	$req->closeCursor();
+}
+
 
 function getMotCleForm() 
 {

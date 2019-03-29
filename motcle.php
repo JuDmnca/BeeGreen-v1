@@ -4,10 +4,10 @@
 require('functions.php');
 
 extract($_GET);
-$motcles = strip_tags($NumMoCle);
-$keyword = getMC($NumMoCle);
+$NumMoCle = $_GET['id'];
+$article = getMC($NumMoCle);
 
-
+$key = getLibMoCle($NumMoCle);
 ?>
 
 <!DOCTYPE html>
@@ -20,21 +20,56 @@ $keyword = getMC($NumMoCle);
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<a href="index.php">Retour à l'accueil</a>
-	<h1 class="text-center textevert"><!--<?= $motcles->LibMoCle ?>--></h1>
+	<nav class="navbar navbar-light navbar-expand-md navigation-clean">
+            <div class="container"><a class="navbar-brand" href="index.php"><img src="logo.png" width="200px" height="100px"></a>
+              <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only"></span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" href="index.php">Accueil</a>
+                        </li>
+                        
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" href="evenements.php">Événements</a>
+                        </li>
+                        
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" href="acteur.php">Acteurs clés</a>
+                        </li>
 
-	<div class="container">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" href="clindoeil.php">Clin d'oeil</a>
+                        </li>
 
-		 <?php foreach($keyword as $keyword): ?>
-		<div class=" carte col-md-3">
-			<h6><?= $keyword->LibTitrA ?></h6>
-			<p><?= $keyword->LibChapoA ?></p>
-			<time><?= $keyword->DtCreA ?></time>
-			<a href="article.php?NumArt=<?= $keyword->NumArt ?>">Lire</a>
-		</div>
-		<?php endforeach; ?>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link " href="diy.php">DIY</a>
+                        </li>
 
-	</div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+	<h1 class="text-center textevert"><?= $key->LibMoCle ?></h1>
+
+	<div class="container mt-4">
+
+    <div class="row ">
+
+  <?php foreach($article as $article): ?>
+    <div class="col-lg-4">
+      <h5 class="text-center"><?= $article->LibTitrA ?></h5>
+      <img src="<?= $article->UrlPhotA ?>" width ="350px" height="300px">
+      <time><?= $article->DtCreA ?></time>
+      <p><?= $article->LibChapoA ?></p>
+      <center><a href="article.php?NumArt=<?= $article->NumArt ?>">Lire</a></center>
+    </div>
+    <?php endforeach; ?>
+
+  </div>
+</div>
 	<footer class="page-footer">
 
         <div style="background-color: #62997A;">
