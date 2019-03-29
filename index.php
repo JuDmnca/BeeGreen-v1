@@ -112,7 +112,7 @@
 		  		<div class='row caroussel'>
 
 		  			<?php foreach($acteurs as $acteurs): ?>
-						<div class=" carte col-md-3">
+						<div class=" carte col-md-3  mt-3">
 		  				<img src="fridays.jpg" class="imageaccueil">
 		  				<h6><?= $acteurs->LibTitrA ?></h6>
 		  				<p><?= $acteurs->LibChapoA ?></p>
@@ -131,7 +131,7 @@
 		  		<div class='row caroussel'>
 
 		  			<?php foreach($clindoeil as $clindoeil): ?>
-		  			<div class=" carte col-md-3">
+		  			<div class=" carte col-md-3  mt-3">
 		  			<img src="fridays.jpg" class="imageaccueil">
 		  			<h6><?= $clindoeil->LibTitrA ?></h6>
 		  			<p><?= $clindoeil->LibChapoA ?></p>
@@ -147,7 +147,7 @@
 			<a class="nav-link" href="diy.php">Do It Yourself</a>
 		  		<div class='row caroussel'>
 		  			<?php foreach($diy as $diy): ?>
-						<div class=" carte col-md-3 mt-3">		 				
+						<div class=" carte col-md-3 mt-3 ">		 				
 		  				<h6><?= $diy->LibTitrA ?></h6>
 		  				<img width=100px class='img-fluid imageaccueil' src="<?= $diy->UrlPhotA ?> ">
 		  				<p><?= $diy->LibChapoA ?></p>
