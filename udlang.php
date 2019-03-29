@@ -30,6 +30,10 @@
 	<?php foreach($lang as $lang): ?>
 		
 			<h6><?= $lang->Lib1Lang ?></h6>
+
+            <a class="btn btn-light" href="edit_lang.php?id=<?= $lang->NumLang ?>">Modifier</a>
+            <a class="btn btn-light" href="delete_lang.php?id=<?= $lang->NumLang ?>">Supprimer</a>
+
 	<?php endforeach; ?>
 
 	</div>

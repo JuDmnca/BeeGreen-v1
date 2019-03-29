@@ -31,7 +31,8 @@
 	<?php foreach($angle as $angle): ?>
 		<h6><?= $angle->LibAngl ?></h6>
 
-			<a class="btn-primary modifbutton" href="edit_angle.php?id=<?= $angle->NumAngl ?>">Modifier</a>
+			<a class="btn btn-light" href="edit_angle.php?id=<?= $angle->NumAngl ?>">Modifier</a>
+            <a class="btn btn-light" href="delete_angle.php?id=<?= $angle->NumAngl ?>">Supprimer</a>
 			
 	<?php endforeach; ?>
 

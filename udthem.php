@@ -34,7 +34,8 @@
 	<?php foreach($them as $them): ?>
 		<h6><?= $them->LibThem ?></h6>
 
-			<a class="btn-primary modifbutton" href="edit_them.php?id=<?= $them->LibThem ?>">Modifier</a>
+			<a class="btn btn-light" href="edit_them.php?id=<?= $them->LibThem ?>">Modifier</a>
+            <a class="btn btn-light" href="delete_them.php?id=<?= $them->NumThem ?>">Supprimer</a>
 			
 	<?php endforeach; ?>
 

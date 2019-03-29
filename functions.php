@@ -26,6 +26,36 @@ function getArticles($NumArt)
 	$req->closeCursor();
 }
 
+	/* EDITER ET SUPPRIMER UN ARTICLE */
+
+	if(isset($_POST['edit_article_submit']))
+	{   
+	   EditArticle();
+	}
+	if(isset($_POST['delete_submit']))
+	{   
+	   DeleteArticle();
+	}
+
+	function EditArticle(){
+    require('connect.php');
+    $article = getArticles($_GET['NumArt']);
+    $query_edit = $bdPdo->prepare('UPDATE ARTICLE SET LibTitrA = :LibTitrA, LibChapoA = :LibChapoA, Parag1A = :Parag1A, LibSsTitr1 = :LibSsTitr1, Parag2A = :Parag2A, LibSsTitr2 = :LibSsTitr2, Parag3A = :Parag3A, LibConclA = :LibConclA , UrlPhotA = :UrlPhotA WHERE NumArt=(:NumArt)');
+    $query_edit->execute(array( 
+        ':NumArt' => $_GET['NumArt'],
+        ':LibTitrA' => $_POST['LibTitrA'], 
+        ':LibChapoA' => $_POST['LibChapoA'],
+        ':Parag1A' => $_POST['Parag1A'],
+        ':LibSsTitr1' => $_POST['LibSsTitr1'],
+        ':Parag2A' => $_POST['Parag2A'],
+        ':LibSsTitr2' => $_POST['LibSsTitr2'],
+        ':Parag3A' => $_POST['Parag3A'],
+        ':LibConclA' => $_POST['LibConclA'],
+        ':UrlPhotA' => $_POST['UrlPhotA'])); 
+    header('Location:article.php?NumArt='.$_GET['NumArt']);
+}
+
+
 //fonction qui répuère tous les acteurs clé
 function getActeurs()
 {
@@ -182,11 +212,12 @@ function getMotCleForm()
 	$req->closeCursor();
 }
 	
+	/* PARTIE THEMATIQUE */
 
 	function getThemUd()
 	{
 	require('connect.php');
-	$req = $bdPdo->prepare("SELECT LibThem FROM THEMATIQUE ORDER BY LibThem");
+	$req = $bdPdo->prepare("SELECT * FROM THEMATIQUE ORDER BY LibThem");
 	$req->execute();
 	$data = $req->fetchAll(PDO::FETCH_OBJ);
 	return $data;
@@ -208,6 +239,22 @@ function getMotCleForm()
 	// $req->closeCursor();
 }
 
+function getThemDelete($NumThem)
+{
+	require('connect.php');
+	$req = $bdPdo->prepare('SELECT * FROM THEMATIQUE WHERE NumThem = ?');
+	$req->execute(array($NumThem));
+	if($req->rowCount() == 1)
+	{
+		$data = $req->fetch(PDO::FETCH_OBJ);
+		return $data;
+	}
+	// else
+	// 	header('Location: index.php');
+	// $req->closeCursor();
+}
+
+	/* PARTIE LANGUE */
 
 	function getLangUd()
 	{
@@ -219,6 +266,24 @@ function getMotCleForm()
 	$req->closeCursor();
 	}
 
+	function getLangDelete($NumLang)
+{
+	require('connect.php');
+	$req = $bdPdo->prepare('SELECT * FROM LANGUE WHERE NumLang = ?');
+	$req->execute(array($NumLang));
+	if($req->rowCount() == 1)
+	{
+		$data = $req->fetch(PDO::FETCH_OBJ);
+		return $data;
+	}
+	// else
+	// 	header('Location: index.php');
+	// $req->closeCursor();
+}
+
+
+	/* PARTIE ANGLE */
+
 	function getAngleUd()
 	{
 	require('connect.php');
@@ -229,7 +294,22 @@ function getMotCleForm()
 	$req->closeCursor();
 	}
 
-		function getAnglEdit($NumAngl)
+	function getAnglEdit($NumAngl)
+{
+	require('connect.php');
+	$req = $bdPdo->prepare('SELECT * FROM ANGLE WHERE NumAngl = ?');
+	$req->execute(array($NumAngl));
+	if($req->rowCount() == 1)
+	{
+		$data = $req->fetch(PDO::FETCH_OBJ);
+		return $data;
+	}
+	// else
+	// 	header('Location: index.php');
+	// $req->closeCursor();
+}
+
+function getAnglDelete($NumAngl)
 {
 	require('connect.php');
 	$req = $bdPdo->prepare('SELECT * FROM ANGLE WHERE NumAngl = ?');
@@ -271,33 +351,6 @@ if(isset($_POST['edit_angle_submit']))
 }
 
 
-
-	if(isset($_POST['edit_article_submit']))
-	{   
-	   EditArticle();
-	}
-	if(isset($_POST['delete_submit']))
-	{   
-	   DeleteArticle();
-	}
-
-	function EditArticle(){
-    require('connect.php');
-    $article = getArticles($_GET['NumArt']);
-    $query_edit = $bdPdo->prepare('UPDATE ARTICLE SET LibTitrA = :LibTitrA, LibChapoA = :LibChapoA, Parag1A = :Parag1A, LibSsTitr1 = :LibSsTitr1, Parag2A = :Parag2A, LibSsTitr2 = :LibSsTitr2, Parag3A = :Parag3A, LibConclA = :LibConclA , UrlPhotA = :UrlPhotA WHERE NumArt=(:NumArt)');
-    $query_edit->execute(array( 
-        ':NumArt' => $_GET['NumArt'],
-        ':LibTitrA' => $_POST['LibTitrA'], 
-        ':LibChapoA' => $_POST['LibChapoA'],
-        ':Parag1A' => $_POST['Parag1A'],
-        ':LibSsTitr1' => $_POST['LibSsTitr1'],
-        ':Parag2A' => $_POST['Parag2A'],
-        ':LibSsTitr2' => $_POST['LibSsTitr2'],
-        ':Parag3A' => $_POST['Parag3A'],
-        ':LibConclA' => $_POST['LibConclA'],
-        ':UrlPhotA' => $_POST['UrlPhotA'])); 
-    header('Location:article.php?NumArt='.$_GET['NumArt']);
-}
 
 
 
