@@ -19,7 +19,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-light navbar-expand-md navigation-clean">
-            <div class="container"><a class="navbar-brand" href="index.php"><img src="logo.png" width="200px" height="100px"></a>
+            <div class="container"><a class="navbar-brand" href="index.php"><img src="img/logo.png" width="200px" height="100px"></a>
               <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only"></span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse"
                     id="navcol-1">
