@@ -1,0 +1,151 @@
+/*import FONT */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco');
+
+h1 {
+	font-family: Sue Ellen Francisco, cursive;
+	font-size: 400%;
+	color:#62997A;
+}
+
+body{
+	background-color: #FFF;
+}
+
+h5 {
+	font-family: Sue Ellen Francisco, cursive;
+	font-size: 150%;
+}
+
+.like-counter {
+  color: #62997A;
+  text-decoration: none;
+  margin-right: 5px;
+    
+  &:hover {
+    text-decoration: underline;
+    color: #72243D;
+  }
+}
+
+.liked {
+  font-weight: bold;
+  color: #72243D;
+}
+
+.herowrapper {
+	position: absolute;
+	z-index: 2000;
+	font-family: "Sue Ellen Francisco";
+	font-size: 2vw;
+}
+.herowrapper h3 {
+	text-align: center;
+	color: #FFF;
+	z-index: 2000;
+	font-family: "Sue Ellen Francisco";
+	font-size: 2vw;
+}
+.herowrapper b {
+	padding: 0px 5px;
+	font-family: "Sue Ellen Francisco";
+	font-size: 2vw;
+	color : #72243D;
+}
+
+
+.profilpic{
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.comment-title{
+	font-family: Sue Ellen Francisco, cursive;
+	font-size: 200%;
+	margin-top: 16vh;
+
+}
+
+.image{
+	width: 60vw;
+}
+
+.imageDIY{
+	width: 90%;
+}
+
+.chapo {
+	font-style: italic;
+	color: #4B5259;
+}
+
+.sous-titre{
+	color: #333;
+}
+
+p {
+	color: #56585b;
+}
+
+.textevert {
+	color: #62997A;
+	margin-top: 1vh;
+}
+
+.nav-link {
+	color: #62997A;
+	font-size: 20px;
+	padding-top: 4vh; 
+	padding-bottom: 4vh; 
+	margin-left: 1.2vw;
+	font-family: Sue Ellen Francisco;
+}
+
+.nav-link:hover {
+	color: #A9DA88;
+	font-size: 20px;
+	padding-top: 4vh; 
+	padding-bottom: 4vh; 
+	margin-left: 1.2vw;
+	font-family: Sue Ellen Francisco;
+}
+
+
+/* FOOTER */
+
+body > .page-footer {
+	padding-top: 60px;
+}
+
+.page-footer {}
+
+
+.fa-instagram {
+	color: white;
+}
+
+.barre {
+	margin-top: O;
+	width: 100px;
+	float: left;
+}
+
+.liensf {
+	text-align: center;
+	margin-top: 2vh;
+}
+
+.pf {
+	margin-bottom: 2px;
+}
+
+.lienf {
+	color: #AB3E5B;
+	font-size: 14px;
+}
+
+.lienf:hover {
+	color: #72243D;
+}
+
+

@@ -14,10 +14,10 @@
 	<head>
 		<meta charset="utf-8" />
 		<title><?= $article->LibTitrA ?></title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="css/stylesarticle.css">
+  <link rel="shortcut icon" href="img/icone.ico">
 	</head>
 
 	<body>
@@ -120,19 +120,19 @@
         <div class="col-lg-2">
           <button type="button" class="btn btn-light">
           <a href="#" class="like-counter">J'aime</a>
-          <span class="click-text"><a id="clicks"></span>
+          <span class="click-text"><a id="clicks"></a></span>
         </button>
         </div>
         
         <div class="col-lg-2">
         <form method="POST" action= <?= "edit_article.php?NumArt=".$NumArt ?>  >
-            <input class="btn btn-light"  value="Modifier" name="edit_submit"/>
+            <input  type="submit" class="btn btn-light" value="Modifier" name="edit_submit"/>
         </form>
         </div>
 
         <div class="col-lg-2">
         <form method="POST" action= <?= "delete_article.php?NumArt=".$NumArt ?>  >
-            <input class="btn btn-light" value="Supprimer" name="edit_submit"/>
+            <input class="btn btn-light" type="submit" value="Supprimer" name="edit_submit"/>
         </form>
         </div>
 
@@ -142,43 +142,63 @@
     </div>
 
   </div>
+
+  <div class="container">
+      <div>
+          
+          <div class="comment-title">
+            <p>Commentaires</p>
+            </div>
+              <?php $read = fopen("com.txt", "r+t");
+               echo fread($read, 1024);
+               fclose($read); ?>
+      </div>
+      
+
+
+
+      <div>
+                <form action="" method="POST">
+          
+          <div class="comment-title">
+                        <p>Laisser un commentaire</p>
+                    </div>
+                    
+                    <div class="row">
+            
+            <div class="col-12 col-lg-6">
+              
+                            <input type="text" class="form-control Input" name="Name" id="nom" placeholder="Nom*" required>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6">
+                            <input type="email" class="form-control Input" name="Email" id="email" placeholder="Email*" required>
+                        </div>
+                        
+                        <br><br><br>
+                        
+                        <div class="col-12">
+                             <textarea name="Comment" class="form-control Input" id="message" cols="30" rows="10" placeholder="Message*" required></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <br>
+                            <button type="submit" name="Submit" class=" Submit btn btn-light">Envoyer</button>
+                        </div>
+                    
+                    </div>
+              </form>
+            </div>
+  </div>
     
-
-  
-
-
-
-
 
 
 <!-- LikeBtn.com BEGIN -->
 <span class="likebtn-wrapper" data-theme="bootstrap" data-lang="fr" data-ef_voting="heartbeat" data-identifier="item_1" data-show_like_label="false" data-dislike_enabled="false" data-icon_dislike_show="false" data-counter_clickable="true" data-counter_padding="0"></span>
 <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
 <!-- LikeBtn.com END -->
-<br /><br / >
-<form action="" method="POST">
 
-   <label> Pseudo: <br>
-    <input type="text" name="Name" class="Input" style="width: 225px" required>
-   </label>
-   <br><br>
-     <label> Email: <br>
-    <input type="text" name="Email" class="Input" style="width: 225px" required>
-   </label>
-   <br><br>
-   <label> Commentaire: <br>
-    <textarea name="Comment" class="Input" style="width: 300px" required></textarea>
-   </label>
-   <br><br>
-   <input type="submit" name="Submit" value="Envoyer le commentaire" class="Submit">
 
-<br /> <br />
-<a href="#top"><img src="https://image.flaticon.com/icons/svg/578/578922.svg" height="5%" width="5%"></a>
-  </form>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<body>
-
-<br />
 <script>
 function myFunction() {
   var copyText = document.getElementById("myInput");
@@ -194,6 +214,34 @@ function outFunc() {
   tooltip.innerHTML = "Copié dans le presse papier";
 }
 </script>
+
+
+<?php
+ 
+ if(isset($_POST['Submit'])){
+  print "<h1> Votre commentaire a bien été envoyé !</h1>";
+
+  $Name = $_POST['Name'];
+  $Email = $_POST['Email'];
+  $Comment = $_POST['Comment'];
+
+  #Get old comments
+  $old = fopen("com.txt", "r+t");
+  $old_comments = fread($old, 1024);
+
+  #Delete everything, write down new and old comments
+  $write = fopen("com.txt", "w+");
+  $string = "<b>".$Name."</b><br>". $Email. "<br>".$Comment."<br>\n".$old_comments;
+  fwrite($write, $string);
+  fclose($write);
+  fclose($old);
+ }
+
+
+
+?>
+
+
 
 <footer class="page-footer">
 
@@ -233,36 +281,12 @@ function outFunc() {
     </footer>
  </body>
 
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>  
+
 </html>
 
 
-<?php
- 
- if(isset($_POST['Submit'])){
-  print "<h1> Votre commentaire a bien été envoyé !</h1>";
-
-  $Name = $_POST['Name'];
-  $Email = $_POST['Email'];
-  $Comment = $_POST['Comment'];
-
-  #Get old comments
-  $old = fopen("com.txt", "r+t");
-  $old_comments = fread($old, 1024);
-
-  #Delete everything, write down new and old comments
-  $write = fopen("com.txt", "w+");
-  $string = "<b>".$Name."</b><br>". $Email. "<br>".$Comment."<br>\n".$old_comments;
-  fwrite($write, $string);
-  fclose($write);
-  fclose($old);
- }
-
- #Read comments
- $read = fopen("com.txt", "r+t");
- echo "<br><br>Tous les commentaires :<hr>".fread($read, 1024);
- fclose($read);
-
-?>
 
 
 

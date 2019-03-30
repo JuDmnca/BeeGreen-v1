@@ -20,13 +20,15 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="shortcut icon" href="img/icone.ico">
 </head>
 <body>
 
+	<nav class="navbar navbar-light navbar-expand-md navigation-clean">
 	<div class= "container">
-		<div class= "row">
-			<div class="col-md-4">
-				<a class="navbar-brand" href="index.php"><img src="logo.png" width="200px" height="100px"></a>
+
+			<div class="col-md-4 pl-0">
+				<a class="navbar-brand" href="index.php"><img src="img/logo.png" width="200px" height="100px"></a>
 			</div>
 			<div class="col-lg-4"></div>
 			<div class=" text-center mt-3 col-lg-4">
@@ -56,7 +58,9 @@
            		?>
        </div>
    </div>
+   </nav>
 
+   	<div class= "container">
 
 		<div class="row">
 			<div class="col-sm-1">
