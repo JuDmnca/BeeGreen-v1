@@ -14,7 +14,7 @@
 	<title>Thématique</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="shortcut icon" href="img/icone.ico">
 </head>
 <body>
@@ -50,24 +50,38 @@
             </div>
         </nav>
     </div>
-	<h1 class="text-center textevert">Les thématiques:</h1>
+	<h1 class="text-center textevert mb-5">Les thématiques:</h1>
 
 	<div class="container">
 
-		<form name="nouvmotcle" method="post" action="create/ajoutthem.php">
-                <label for="LibThem" >AJOUTER UNE THEMATIQUE</label> : <input type="text" name="LibThem"/></input> <br/>
-                <label for="NumThem" >NUMERO DE LA THEMATIQUE</label> : <input type="text" name="NumThem"/></input> <br/>
-                <label for="NumLang" >QUELLE LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
+		<center><form name="nouvmotcle" method="post" action="create/ajoutthem.php">
+                <label for="LibThem" >Nom de la thématique</label> : <input type="text" name="LibThem"/></input> <br/>
+                <label for="NumThem" >Numéro de la thématique</label> : <input type="text" name="NumThem"/></input> <br/>
+                <label for="NumLang" >Langue</label> : <input type="text" name="NumLang"/></input> <br/>
                 <input name="valid" type="submit" value="AJOUTER">
-    </form>
+    </form></center>
 
 
 	<?php foreach($them as $them): ?>
-		<h6><?= $them->LibThem ?></h6>
 
-			<a class="btn btn-light" href="edit/edit_them.php?id=<?= $them->LibThem ?>">Modifier</a>
-            <a class="btn btn-light" href="delete/delete_them.php?id=<?= $them->NumThem ?>">Supprimer</a>
-			
+    <div class="row">
+
+            <div class=col-lg-1></div>
+
+            <div class=col-lg-8>
+                  <h6><?= $them->LibThem ?></h6>
+            </div>
+
+            <div class=col-lg-1>
+                   <a class="btn btn-light" href="edit/edit_them.php?id=<?= $them->LibThem ?>">Modifier</a>
+            </div>
+
+            <div class=col-lg-2>
+              <a class="btn btn-light" href="delete/delete_them.php?id=<?= $them->NumThem ?>">Supprimer</a>
+            </div>
+            
+        </div><br>
+
 	<?php endforeach; ?>
 
 	</div>

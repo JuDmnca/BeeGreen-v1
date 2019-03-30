@@ -12,7 +12,7 @@
 	<title>Thématique</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="shortcut icon" href="img/icone.ico">
 </head>
 
@@ -49,22 +49,35 @@
             </div>
         </nav>
     </div>
-	<h1 class="text-center textevert">Les thématiques:</h1>
+	<h1 class="text-center textevert mb-5">Les langues:</h1>
 
 	<div class="container">
 
-		<form name="nouvlang" method="post" action="create/ajoutlangue.php">
-                <label for="Lib1Lang" >AJOUTER UNE LANGUE</label> : <input type="text" name="Lib1Lang"/></input> <br/>
-                <label for="NumLang" >NUMERO DE LA LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
+	<center><form name="nouvlang" method="post" action="create/ajoutlangue.php">
+                <label for="Lib1Lang" >Nom de la langue</label> : <input type="text" name="Lib1Lang"/></input> <br/>
+                <label for="NumLang" >Numéro de la langue</label> : <input type="text" name="NumLang"/></input> <br/>
                 <input name="valid" type="submit" value="AJOUTER">
-    </form>
+    </form></center>
 
 	<?php foreach($lang as $lang): ?>
-		
-			<h6><?= $lang->Lib1Lang ?></h6>
 
-            <a class="btn btn-light" href="edit/edit_lang.php?id=<?= $lang->NumLang ?>">Modifier</a>
-            <a class="btn btn-light" href="delete/delete_lang.php?id=<?= $lang->NumLang ?>">Supprimer</a>
+        <div class="row">
+
+            <div class=col-lg-1></div>
+
+            <div class=col-lg-8>
+                  <h6><?= $lang->Lib1Lang ?></h6>
+            </div>
+
+            <div class=col-lg-1>
+                   <a class="btn btn-light" href="edit/edit_lang.php?id=<?= $lang->NumLang ?>">Modifier</a>
+            </div>
+
+            <div class=col-lg-2>
+              <a class="btn btn-light" href="delete/delete_lang.php?id=<?= $lang->NumLang ?>">Supprimer</a>
+            </div>
+
+        </div><br>
 
 	<?php endforeach; ?>
 
