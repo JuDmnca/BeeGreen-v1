@@ -78,8 +78,8 @@
 
             <form method="POST" action='saisie.php'>
 
-                <label for="DtCreA"> Date de création </label><br/>
-                <input type="date" name="DtCreA"></input> <br/><br/>
+                <center><label for="DtCreA"> Date de création </label><br/>
+                <input type="date" name="DtCreA"></input> <br/><br/></center>
 
                 <label for="NumArt"> Numéro d'article </label><br/>
                 <textarea type="text" name="NumArt" cols="92"></textarea> <br/><br/>
