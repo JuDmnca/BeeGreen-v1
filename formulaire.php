@@ -113,7 +113,7 @@
 
                 <div class="row">
                     <div class="col-lg-6">
-                        <label for="NumThem"> Thématique </label> <br/>
+                        <center><label for="NumThem"> Thématique </label> <br/>
                         <select name="NumThem" id="NumThem">
                             <?php
                                 while($obj = $them->fetch()) { ?>
@@ -121,11 +121,11 @@
                                         <?php echo($obj[1]); ?>
                                     </option>
                             <?php } ?>           
-                        </select> 
+                        </select> </center>
                     </div>
                     
                     <div class="col-lg-6">
-                        <label for="NumLang"> Langue </label> <br/>
+                        <center><label for="NumLang"> Langue </label> <br/>
                         <select name="NumLang" id="NumLang">
                             <?php
                                 while($obj = $lang->fetch()) { ?>
@@ -133,13 +133,13 @@
                                         <?php echo($obj[1]); ?>
                                     </option>
                             <?php } ?>           
-                        </select> <br/><br/>
+                        </select> <br/><br/> </center>
                     </div>
     
                 </div>
                
 
-                <input type="submit" value="MODIFIER" name="valid">
+                <center><input type="submit" value="AJOUTER" name="valid"></center>
 
                 <br/>
                 <br/>
