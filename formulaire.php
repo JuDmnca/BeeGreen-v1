@@ -23,12 +23,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
         <link rel="shortcut icon" href="img/icone.ico">
 </head>
+
 <body>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-            <div class="container"><a class="navbar-brand" href="index.php"><img src="logo.png" width="200px" height="100px"></a>
+            <div class="container"><a class="navbar-brand" href="index.php"><img src="img/logo.png" width="200px" height="100px"></a>
               <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only"></span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse"
                     id="navcol-1">
@@ -60,49 +61,95 @@
         </nav>
     </div>
 
-    <h1 class="text-center textevert">Ajouter un nouvel article</h1>
 
-    <?php 
-        if($Connected == false){
-            echo '<body onLoad="alert(\'Vous devez être connecté en mode éditeur pour faire cela !\')">';
-            echo '<meta http-equiv="refresh" content="0;URL=login_form.php">';
-        }
-    ?>
+    <div class="container main-content">
 
-	<form name="inscription" method="post" action="saisie.php">
-        <label for="NumArt" >NUMERO DE TON ARTICLE</label> : <input type="text" name="NumArt"/></input> <br/>
-		<label for="DtCreA" >Date</label> : <input type="date" name="DtCreA"/></input> <br/>
-        <label for="LibTitrA" >Titre</label> : <input type="text" name="LibTitrA"/></input> <br/>
-        <label for="LibChapoA" >Chapo</label> : <input type="text" name="LibChapoA"/></input> <br/>
-        <label for="Parag1A" >Paragraphe 1</label> : <input type="text" name="Parag1A"/></input> <br/>
-        <label for="LibSsTitr1" >Sous-titre 1</label> : <input type="text" name="LibSsTitr1"/></input> <br/>
-        <label for="Parag2A" >Paragraphe 2</label> : <input type="text" name="Parag2A"/></input> <br/>
-        <label for="LibSsTitr2" >Sous-titre 2</label> : <input type="text" name="LibSsTitr2"/></input> <br/>
-        <label for="Parag3A" >Paragraphe 3</label> : <input type="text" name="Parag3A"/></input> <br/>
-        <label for="LibConclA" >Conclusion</label> : <input type="text" name="LibConclA"/></input> <br/>
-        <label for="UrlPhotA" >Lien de la photo</label> : <input type="text" name="UrlPhotA"/></input> <br/>
+        <h1 class="text-center textevert mb-5">Ajouter un nouvel article</h1>
 
-        <select name="NumLang" id="NumLang">
-            <?php
-                while($obj = $lang->fetch()) { ?>
-                    <option value="<?php  echo($obj[0]); ?>">
-                        <?php echo($obj[1]); ?>
-                    </option>
-                <?php } ?>           
-        </select> <br/>
+        <?php 
+            if($Connected == false){
+                echo '<body onLoad="alert(\'Vous devez être connecté en mode éditeur pour faire cela !\')">';
+                echo '<meta http-equiv="refresh" content="0;URL=login_form.php">';
+            }
+        ?>
 
+        <div class="row">
+            <div class="col-lg-2"></div>
 
-        <select name="NumThem" id="NumThem">
-            <?php
-                while($obj = $them->fetch()) { ?>
-                    <option value="<?php  echo($obj[0]); ?>">
-                        <?php echo($obj[1]); ?>
-                    </option>
-                <?php } ?>           
-            </select> <br/>
+            <form method="POST" action='saisie.php'>
 
-        <input name="valid" type="submit" value="SUBMIT">
-    </form>
+                <label for="DtCreA"> Date de création </label><br/>
+                <input type="date" name="DtCreA"></input> <br/><br/>
+
+                <label for="NumArt"> Numéro d'article </label><br/>
+                <textarea type="text" name="NumArt" cols="92"></textarea> <br/><br/>
+
+                <label for="LibTitrA"> Titre </label><br/>
+                <textarea type="text" name="LibTitrA" cols="92"></textarea> <br/><br/>
+
+                <label for="LibChapoA"> Chapo </label><br/>
+                <textarea type="text" name="LibChapoA" cols="92" rows="5"></textarea> <br/><br/>
+
+                <label for="Parag1A"> Paragraphe 1 </label><br/>
+                <textarea type="text" name="Parag1A" cols="92" rows="5"></textarea> <br/><br/>
+
+                <label for="LibSsTitr1"> Sous-titre 1 </label><br/>
+                <textarea type="text" name="LibSsTitr1" cols="92"></textarea><br/><br/>
+
+                <label for="Parag2A"> Paragraphe 2 </label><br/>
+                <textarea type="text" name="Parag2A" cols="92" rows="5"></textarea> <br/><br/>
+
+                <label for="LibSsTitr2"> Sous-titre 2 </label><br/>
+                <textarea type="text" name="LibSsTitr2" cols="92"></textarea><br/><br/>
+
+                <label for="Parag3A"> Paragraphe 3 </label><br/>
+                <textarea type="text" name="Parag3A" cols="92" rows="5"></textarea> <br/><br/>
+
+                <label for="LibConclA"> Conclusion </label><br/>
+                <textarea type="text" name="LibConclA" cols="92" rows="5"></textarea> <br/><br/>
+
+                <label for="UrlPhotA"> Lien de la photo </label><br/>
+                <textarea type="text" name="UrlPhotA" cols="92" ></textarea><br/><br/>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="NumThem"> Thématique </label> <br/>
+                        <select name="NumThem" id="NumThem">
+                            <?php
+                                while($obj = $them->fetch()) { ?>
+                                    <option value="<?php  echo($obj[0]); ?>">
+                                        <?php echo($obj[1]); ?>
+                                    </option>
+                            <?php } ?>           
+                        </select> 
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <label for="NumLang"> Langue </label> <br/>
+                        <select name="NumLang" id="NumLang">
+                            <?php
+                                while($obj = $lang->fetch()) { ?>
+                                    <option value="<?php  echo($obj[0]); ?>">
+                                        <?php echo($obj[1]); ?>
+                                    </option>
+                            <?php } ?>           
+                        </select> <br/><br/>
+                    </div>
+    
+                </div>
+               
+
+                <input type="submit" value="MODIFIER" name="valid">
+
+                <br/>
+                <br/>
+
+            </form>
+
+    </div> 
+
+    </div>
+
 
         <form name="nouvmotcle" method="post" action="create/ajoutmotcle.php">
                 <label for="LibMoCle" >AJOUTER UN MOT-CLE</label> : <input type="text" name="LibMoCle"/></input> <br/>
