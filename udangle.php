@@ -52,7 +52,7 @@
 
 	<div class="container">
 
-		<form name="nouvmotcle" method="post" action="ajoutangle.php">
+		<form name="nouvmotcle" method="post" action="create/ajoutangle.php">
                 <label for="LibAngl" >AJOUTER UN ANGLE</label> : <input type="text" name="LibAngl"/></input> <br/>
                 <label for="NumAngl" >NUMERO DE L'ANGLE</label> : <input type="text" name="NumAngl"/></input> <br/>
                 <label for="NumLang" >QUELLE LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
@@ -62,8 +62,8 @@
 	<?php foreach($angle as $angle): ?>
 		<h6><?= $angle->LibAngl ?></h6>
 
-			<a class="btn btn-light" href="edit_angle.php?id=<?= $angle->NumAngl ?>">Modifier</a>
-            <a class="btn btn-light" href="delete_angle.php?id=<?= $angle->NumAngl ?>">Supprimer</a>
+			<a class="btn btn-light" href="edit/edit_angle.php?id=<?= $angle->NumAngl ?>">Modifier</a>
+            <a class="btn btn-light" href="delete/delete_angle.php?id=<?= $angle->NumAngl ?>">Supprimer</a>
 			
 	<?php endforeach; ?>
 

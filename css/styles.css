@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco');
+
+h1 {
+  font-family: Sue Ellen Francisco, cursive;
+  font-size: 400%;
+  color:#62997A;
+}
+
+a {
+  color: #AB3E5B;
+}
+
+a:hover {
+  color: #72243D;
+}
+
+/* ACCUEIL */
+
+.image{
+  width: 60vw;
+}
+
+.chapo {
+  font-style: italic;
+  color: #4B5259;
+}
+
+.sous-titre{
+  color: #333;
+}
+
+.mot {
+  text-align: right;
+}
+.wc {
+  float:right;
+  margin-right: -1vw;
+}
+
+.textevert {
+  color: #62997A;
+  margin-top: 1vh;
+}
+
+.nav-link {
+  color: #62997A;
+  font-size: 20px;
+  padding-top: 4vh; 
+  padding-bottom: 4vh; 
+  margin-left: 1.2vw;
+  font-family:Sue Ellen Francisco;
+}
+
+.nav-link:hover {
+  color: #A9DA88;
+  font-size: 20px;
+  font-family:Sue Ellen Francisco;
+}
+
+p.bordure_verticale {
+height: 100%;
+margin-left: 5vw;
+margin-top: 8vh;
+border-left: 0.8px solid #707070;
+}
+
+.logo {
+  margin-left: 2.5vw;
+}
+
+.haut {
+  margin-top: 10vh;
+}
+
+.caroussel {
+  width: 100%;
+  margin-left: 1.5vw;
+}
+
+.ligne {
+  width: 100%;
+  margin-left: 1.5vw;
+}
+
+.carte {
+  border: solid;
+  border-color: #707070;
+  border-width: 0.8px;
+  margin-right: 2vw;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.rond {
+  width : 10px;
+  height : 10px;
+  margin-left: -1.6vw;
+  margin-top: 6vh;
+}
+
+.imageaccueil {
+  width: 6vw;
+  float: right;
+  margin-right: -15px;
+}
+
+/* SHOP */
+
+.er {
+  width: 9vw;
+}
+
+.ero {
+  width: 9.5vw;
+}
+
+.boutique {
+  border: solid;
+  border-color: #707070;
+  border-width: 0.8px;
+}
+
+/* CONNECT */
+
+.policemoche {
+  font-family: "Sue Ellen Francisco", sans-serif;
+
+}
+
+/* ARTICLE */
+
+.btnart {
+  display: inline-block;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+#formFooter {
+  background-color: #f6f6f6;
+  border-top: 1px solid #dce8f1;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+
+
+/* TABS */
+
+h2.inactive {
+  color: #cccccc;
+}
+
+h2.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #5fbae9;
+}
+
+
+
+/* FORM TYPOGRAPHY*/
+
+input[type=button], input[type=submit], input[type=reset]  {
+  background-color: #AB3E5B;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 10px 20px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  background-color: #72243D;
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+.btncn {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 10px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.btncn:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+
+.btncn:placeholder {
+  color: #cccccc;
+}
+
+
+
+/* ANIMATIONS */
+
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}
+
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+} 
+
+
+
+/* FOOTER */
+
+body > .page-footer {
+  padding-top: 70px;
+}
+
+.page-footer {}
+
+
+.fa-instagram {
+  color: white;
+}
+
+.barre {
+  margin-top: O;
+  width: 100px;
+  float: left;
+}
+
+.liensf {
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.pf {
+  margin-bottom: 2px;
+}
+
+.lienf {
+  color: #AB3E5B;
+  font-size: 14px;
+}
+
+.lienf:hover {
+  color: #72243D;
+}
+
+
+/* PARTIE CLELIA */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+

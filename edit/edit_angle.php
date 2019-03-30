@@ -1,40 +1,48 @@
+
+<?php
+require_once('../functions.php');
+    
+    $NumAngl = $_GET['NumAngl'];
+
+	$angle = getAnglEdit($NumAngl);
+?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
-        <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="shortcut icon" href="img/icone.ico">
+    <title></title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<meta charset="utf-8">
+<link rel="shortcut icon" href="img/icone.ico">
 </head>
+
 <body>
+ 
+	
+    <div class="container main-content">
+        <h2> Modifier un angle</h2>
+        <h6><?= $NumAngl ?></h6>
+        <form method="POST" action=<?= "functions.php?NumAngl=".$NumAngl ?>>
 
-	<?php
+            <label for="LibTitrA"> Thématique </label><br/>
+            <textarea  name="LibTitrA"><?= $angle->LibAngl ?></textarea> <br/><br/>
 
-    require('functions.php');
+            <input type="submit" value="MODIFIER" name="edit_angle_submit">
 
-     try
-        {
-        $bdPdo = new PDO('mysql:host=localhost;dbname=blogart;charset=utf8', 'root', '');
-        }
-        catch(Exception $e)
-        {
-        die('Erreur : '.$e->getMessage());
-        }
+            <br/>
+            <br/>
 
-        $NumLang = $_GET['id'];
-        $them = getLangDelete($NumLang);
+        </form>
 
-			$queryText = "DELETE FROM LANGUE WHERE NumLang = :NumLang ";
-			$query = $bdPdo->prepare($queryText);
-			$query->execute(array(':NumLang' => $NumLang,));
+    </div> 
 
-?>
-<h1>Supprimé</h1>
-<a href="udlang.php">Retour</a>
+    <?php
 
-<footer class="page-footer">
+    ?>
+    <footer class="page-footer">
 
         <div style="background-color: #62997A;">
           <div class="container">
@@ -72,4 +80,6 @@
       </footer>
 
 </body>
+
 </html>
+

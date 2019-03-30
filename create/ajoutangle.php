@@ -1,7 +1,6 @@
-
 <?php 
 
-	require('connect.php');
+	require('../connect.php');
 
  ?>
 
@@ -17,15 +16,15 @@
 
 <?php
 
-	if ((isset($_POST['NumMoCle'])) && (isset($_POST['LibMoCle'])) && (isset($_POST['NumLang'])))
+	if ((isset($_POST['NumAngl'])) && (isset($_POST['LibAngl'])) && (isset($_POST['NumAngl'])))
 	{
 	
-	if (isset($_POST['NumMoCle']) && !empty($_POST['NumMoCle'])) {
-			$NumMoCle = $_POST['NumMoCle'];
+	if (isset($_POST['NumAngl']) && !empty($_POST['NumAngl'])) {
+			$NumAngl = $_POST['NumAngl'];
 		}
 
-	if (isset($_POST['LibMoCle']) && !empty($_POST['LibMoCle'])) {
-			$LibMoCle = $_POST['LibMoCle'];
+	if (isset($_POST['LibAngl']) && !empty($_POST['LibAngl'])) {
+			$LibAngl = $_POST['LibAngl'];
 		}
 
 	if (isset($_POST['NumLang']) && !empty($_POST['NumLang'])) {
@@ -33,25 +32,24 @@
 	}
 
 		
-		
 	if(isset($_POST['submit']));
 
 	}
 		
          // 4. Preparation de la requete
-        $queryText = 'INSERT INTO MOTCLE (NumMoCle, LibMoCle, NumLang) VALUES (:NumMoCle, :LibMoCle, :NumLang);';
+        $queryText = 'INSERT INTO THEMATIQUE (NumAngl, LibAngl, NumLang) VALUES (:NumAngl, :LibAngl, :NumLang);';
         $query = $bdPdo->prepare($queryText);
 
         
        try {
 			// 5. Lancement de la requete
         $query->execute(array(
-          ':NumMoCle' => $NumMoCle,
-          ':LibMoCle' => $LibMoCle,
+          ':NumAngl' => $NumAngl,
+          ':LibAngl' => $LibAngl,
           ':NumLang' => $NumLang,
           ));
 		
-		header('Location:formulaire.php');
+		header('Location:../udangle.php');
 		}
 
 		catch (PDOException $e) {
@@ -95,7 +93,6 @@
 	    </div>
 
 	  </footer>
-	  
 
 </body>
 </html>

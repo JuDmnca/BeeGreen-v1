@@ -104,27 +104,27 @@
         <input name="valid" type="submit" value="SUBMIT">
     </form>
 
-        <form name="nouvmotcle" method="post" action="ajoutmotcle.php">
+        <form name="nouvmotcle" method="post" action="create/ajoutmotcle.php">
                 <label for="LibMoCle" >AJOUTER UN MOT-CLE</label> : <input type="text" name="LibMoCle"/></input> <br/>
                 <label for="NumMoCle" >NUMERO DU MOT-CLE</label> : <input type="text" name="NumMoCle"/></input> <br/>
                 <label for="NumLang" >QUELLE LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
                 <input name="valid" type="submit" value="AJOUTER">
     </form>
 
-        <form name="nouvlang" method="post" action="ajoutlangue.php">
+        <form name="nouvlang" method="post" action="create/ajoutlangue.php">
                 <label for="Lib1Lang" >AJOUTER UNE LANGUE</label> : <input type="text" name="Lib1Lang"/></input> <br/>
                 <label for="NumLang" >NUMERO DE LA LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
                 <input name="valid" type="submit" value="AJOUTER">
     </form>
 
-        <form name="nouvmotcle" method="post" action="ajoutangle.php">
+        <form name="nouvmotcle" method="post" action="create/ajoutangle.php">
                 <label for="LibAngl" >AJOUTER UN ANGLE</label> : <input type="text" name="LibAngl"/></input> <br/>
                 <label for="NumAngl" >NUMERO DE L'ANGLE</label> : <input type="text" name="NumAngl"/></input> <br/>
                 <label for="NumLang" >QUELLE LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
                 <input name="valid" type="submit" value="AJOUTER">
     </form>
 
-        <form name="nouvmotcle" method="post" action="ajoutthem.php">
+        <form name="nouvmotcle" method="post" action="create/ajoutthem.php">
                 <label for="LibThem" >AJOUTER UNE THEMATIQUE</label> : <input type="text" name="LibThem"/></input> <br/>
                 <label for="NumThem" >NUMERO DE LA THEMATIQUE</label> : <input type="text" name="NumThem"/></input> <br/>
                 <label for="NumLang" >QUELLE LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>

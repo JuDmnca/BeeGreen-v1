@@ -125,13 +125,13 @@
         </div>
         
         <div class="col-lg-2">
-        <form method="POST" action= <?= "edit_article.php?NumArt=".$NumArt ?>  >
+        <form method="POST" action= <?= "edit/edit_article.php?NumArt=".$NumArt ?>  >
             <input  type="submit" class="btn btn-light" value="Modifier" name="edit_submit"/>
         </form>
         </div>
 
         <div class="col-lg-2">
-        <form method="POST" action= <?= "delete_article.php?NumArt=".$NumArt ?>  >
+        <form method="POST" action= <?= "delete/delete_article.php?NumArt=".$NumArt ?>  >
             <input class="btn btn-light" type="submit" value="Supprimer" name="edit_submit"/>
         </form>
         </div>

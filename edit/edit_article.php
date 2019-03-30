@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <?php
 
-require_once('functions.php');
+require_once('../functions.php');
     
     $NumArt = $_GET['NumArt'];
 	$article = getArticles($NumArt);

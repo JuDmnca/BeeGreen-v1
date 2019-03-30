@@ -1,6 +1,6 @@
 <?php 
 
-	require('connect.php');
+	require('../connect.php');
 
  ?>
 
@@ -16,40 +16,34 @@
 
 <?php
 
-	if ((isset($_POST['NumAngl'])) && (isset($_POST['LibAngl'])) && (isset($_POST['NumAngl'])))
+	if ((isset($_POST['NumLang'])) && (isset($_POST['Lib1Lang'])))
 	{
 	
-	if (isset($_POST['NumAngl']) && !empty($_POST['NumAngl'])) {
-			$NumAngl = $_POST['NumAngl'];
-		}
-
-	if (isset($_POST['LibAngl']) && !empty($_POST['LibAngl'])) {
-			$LibAngl = $_POST['LibAngl'];
-		}
-
 	if (isset($_POST['NumLang']) && !empty($_POST['NumLang'])) {
-		$NumLang = $_POST['NumLang'];
-	}
+			$NumLang = $_POST['NumLang'];
+		}
 
+	if (isset($_POST['Lib1Lang']) && !empty($_POST['Lib1Lang'])) {
+			$Lib1Lang = $_POST['Lib1Lang'];
+		}
 		
 	if(isset($_POST['submit']));
 
 	}
 		
          // 4. Preparation de la requete
-        $queryText = 'INSERT INTO THEMATIQUE (NumAngl, LibAngl, NumLang) VALUES (:NumAngl, :LibAngl, :NumLang);';
+        $queryText = 'INSERT INTO THEMATIQUE (NumLang, Lib1Lang) VALUES (:NumLang, :Lib1Lang);';
         $query = $bdPdo->prepare($queryText);
 
         
        try {
 			// 5. Lancement de la requete
         $query->execute(array(
-          ':NumAngl' => $NumAngl,
-          ':LibAngl' => $LibAngl,
           ':NumLang' => $NumLang,
+          ':Lib1Lang' => $Lib1Lang,
           ));
 		
-		header('Location:formulaire.php');
+		header('Location:../udlang.php');
 		}
 
 		catch (PDOException $e) {
@@ -96,4 +90,3 @@
 
 </body>
 </html>
-

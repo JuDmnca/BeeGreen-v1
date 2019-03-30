@@ -54,7 +54,7 @@
 
 	<div class="container">
 
-		<form name="nouvmotcle" method="post" action="ajoutthem.php">
+		<form name="nouvmotcle" method="post" action="create/ajoutthem.php">
                 <label for="LibThem" >AJOUTER UNE THEMATIQUE</label> : <input type="text" name="LibThem"/></input> <br/>
                 <label for="NumThem" >NUMERO DE LA THEMATIQUE</label> : <input type="text" name="NumThem"/></input> <br/>
                 <label for="NumLang" >QUELLE LANGUE</label> : <input type="text" name="NumLang"/></input> <br/>
@@ -65,8 +65,8 @@
 	<?php foreach($them as $them): ?>
 		<h6><?= $them->LibThem ?></h6>
 
-			<a class="btn btn-light" href="edit_them.php?id=<?= $them->LibThem ?>">Modifier</a>
-            <a class="btn btn-light" href="delete_them.php?id=<?= $them->NumThem ?>">Supprimer</a>
+			<a class="btn btn-light" href="edit/edit_them.php?id=<?= $them->LibThem ?>">Modifier</a>
+            <a class="btn btn-light" href="delete/delete_them.php?id=<?= $them->NumThem ?>">Supprimer</a>
 			
 	<?php endforeach; ?>
 
